@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8A721B0-055D-449E-845C-BE6B6BFCA949}</ProjectGuid>
+    <ProjectGuid>{166E364F-11F5-49C9-A7A4-9F028C3A00A9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PracticeWinApp</RootNamespace>
     <AssemblyName>PracticeWinApp</AssemblyName>
@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\FrmParent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Models\FrmParent.Designer.cs">
-      <DependentUpon>FrmParent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FrmChild.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

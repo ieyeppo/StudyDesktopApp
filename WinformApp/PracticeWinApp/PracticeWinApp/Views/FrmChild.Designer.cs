@@ -29,34 +29,35 @@ namespace PracticeWinApp.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnQuestion = new System.Windows.Forms.Button();
+            this.BtnQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnQuestion
+            // BtnQuestion
             // 
-            this.btnQuestion.Location = new System.Drawing.Point(61, 13);
-            this.btnQuestion.Name = "btnQuestion";
-            this.btnQuestion.Size = new System.Drawing.Size(156, 36);
-            this.btnQuestion.TabIndex = 0;
-            this.btnQuestion.Text = "질문";
-            this.btnQuestion.UseVisualStyleBackColor = true;
-            this.btnQuestion.Click += new System.EventHandler(this.btnQuestion_Click);
+            this.BtnQuestion.Location = new System.Drawing.Point(87, 12);
+            this.BtnQuestion.Name = "BtnQuestion";
+            this.BtnQuestion.Size = new System.Drawing.Size(100, 37);
+            this.BtnQuestion.TabIndex = 0;
+            this.BtnQuestion.Text = "질문";
+            this.BtnQuestion.UseVisualStyleBackColor = true;
+            this.BtnQuestion.Click += new System.EventHandler(this.BtnQuestion_Click);
             // 
             // FrmChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 61);
-            this.Controls.Add(this.btnQuestion);
+            this.Controls.Add(this.BtnQuestion);
             this.Name = "FrmChild";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "자식 폼";
+            this.Text = "자식폼";
+            this.Load += new System.EventHandler(this.FrmChild_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnQuestion;
+        private System.Windows.Forms.Button BtnQuestion;
     }
 }
