@@ -7,12 +7,12 @@ namespace IoTSensorMonApp
         public DateTime Current { get; set; }
         public int Value { get; set; }
 
-        public bool SingleFlat { get; set; }
-        public SensorData(DateTime current, int value, bool singleFlat)
+        public bool SimulFlat { get; set; }
+        public SensorData(DateTime current, int value, bool SimulFlat)
         {
             Current = current;
             Value = value;
-            SingleFlat = singleFlat;
+            SimulFlat = SimulFlat;
         }
     }
 }
