@@ -67,6 +67,7 @@ namespace BookRentalShopApp
                         //reader로 처리...
                         reader.Read();
                         strUserID = reader["userID"] != null ? reader["userID"].ToString() : "";
+                        reader.Close(); //!!
 
                         //확인
                         if (string.IsNullOrEmpty(strUserID))
@@ -76,6 +77,15 @@ namespace BookRentalShopApp
                         }
                         else
                         {
+                            //로그인 정보 남기기
+                            var updateQuery = $@"update membertbl set
+                                                        lastLoginDt = GETDATE() 
+                                                        , loginIpAddr = '{Helper.Common.GetLocalIp()}' 
+                                                    where userID = '{strUserID}' ";
+
+                            cmd.CommandText = updateQuery;
+                            cmd.ExecuteNonQuery();
+
                             MetroMessageBox.Show(this, "접속성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }

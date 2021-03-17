@@ -46,6 +46,17 @@ namespace BookRentalShopApp
 
         }
 
+        private void MnuMember_Click(object sender, EventArgs e)
+        {
+            FrmMember frm = new FrmMember();
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this; //FrmMain
+            frm.Show();
+            frm.Width = this.ClientSize.Width - 10;
+            frm.Height = this.Height - menuStrip1.Height;
+            frm.WindowState = FormWindowState.Maximized;
+        }
+
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MetroMessageBox.Show(this, "종료하시겠습니까?", "종료", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
