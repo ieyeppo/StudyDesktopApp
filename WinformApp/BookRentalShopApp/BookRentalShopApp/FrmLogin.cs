@@ -15,16 +15,15 @@ namespace BookRentalShopApp
 {
     public partial class FrmLogin : MetroForm
     {
-        private bool isLogin = false;
-
         public FrmLogin()
         {
             InitializeComponent();
-            isLogin = false;
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            var strUserID = "";
+
             //빈칸 예외처리
             if(string.IsNullOrEmpty(TxtId.Text) || string.IsNullOrEmpty(TxtPassword.Text))
             {
@@ -34,7 +33,6 @@ namespace BookRentalShopApp
             //관리자 로그인
             else if (TxtId.Text.Equals("admin") && TxtPassword.Text.Equals("1234"))
             {
-                isLogin = true;
                 Close();
                 MetroMessageBox.Show(this, "관리자 로그인 성공", "확인", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
@@ -47,25 +45,46 @@ namespace BookRentalShopApp
                     {
                         if (conn.State == ConnectionState.Closed) conn.Open();
 
+                        var query = "SELECT userID FROM membertbl " +
+                                    " WHERE userID = @userID " +
+                                    " AND passwords = @passwords ";
+
                         //SqlCommand 생성
-                        SqlCommand cmd = new SqlCommand();
+                        SqlCommand cmd = new SqlCommand(query, conn);
 
                         //SqlInjection 해킹 막기위해서 사용
-                        SqlParameter param;
+                        SqlParameter pUserID = new SqlParameter("@userId", SqlDbType.VarChar, 20);
+                        pUserID.Value = TxtId.Text;
+                        cmd.Parameters.Add(pUserID);
+
+                        SqlParameter pPasswords = new SqlParameter("@passwords", SqlDbType.VarChar, 20);
+                        pPasswords.Value = TxtPassword.Text;
+                        cmd.Parameters.Add(pPasswords);
 
                         //SqlDataReader 실행(1)
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         //reader로 처리...
+                        reader.Read();
+                        strUserID = reader["userID"] != null ? reader["userID"].ToString() : "";
 
+                        //확인
+                        if (string.IsNullOrEmpty(strUserID))
+                        {
+                            MetroMessageBox.Show(this, "접속실패", "로그인실패", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            MetroMessageBox.Show(this, "접속성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
                     }
-
-
-                    //로그인 실패MetroMessageBox.Show(this, "아이디 또는 비밀번호를 다시 확인해주세요.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
                     MetroMessageBox.Show(this, $"Error : {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }

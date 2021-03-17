@@ -10,7 +10,6 @@ namespace BookRentalShopApp.Helper
     {
         public static string ConnString = "Data Source=127.0.0.1;" +
                                             "Initial Catalog=bookrentalshop;" +
-                                            "Persist Security Info=True" + 
                                             "User ID=sa;" +
                                             "Password=123456789";
         public static string LoginId = string.Empty;
