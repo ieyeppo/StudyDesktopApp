@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86897AC5-EB4E-4864-A117-DA171196D1BE}</ProjectGuid>
+    <ProjectGuid>{252E3F06-7798-4429-8395-88503E5FC2BC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>BookRentalShopApp</RootNamespace>
     <AssemblyName>BookRentalShopApp</AssemblyName>
@@ -58,6 +58,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBooksPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBooksPopup.Designer.cs">
+      <DependentUpon>FrmBooksPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMemberPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMemberPopup.Designer.cs">
+      <DependentUpon>FrmMemberPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRental.Designer.cs">
+      <DependentUpon>FrmRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBooks.Designer.cs">
+      <DependentUpon>FrmBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +109,18 @@
     <Compile Include="Helper\Common.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBooksPopup.resx">
+      <DependentUpon>FrmBooksPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMemberPopup.resx">
+      <DependentUpon>FrmMemberPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRental.resx">
+      <DependentUpon>FrmRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBooks.resx">
+      <DependentUpon>FrmBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMember.resx">
       <DependentUpon>FrmMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +159,7 @@
   <ItemGroup>
     <Content Include="book.ico" />
     <Content Include="book.png" />
+    <Content Include="search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

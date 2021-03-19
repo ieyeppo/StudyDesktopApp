@@ -31,7 +31,7 @@ namespace BookRentalShopApp
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.TxtId = new MetroFramework.Controls.MetroTextBox();
+            this.TxtUserId = new MetroFramework.Controls.MetroTextBox();
             this.TxtPassword = new MetroFramework.Controls.MetroTextBox();
             this.BtnLogin = new MetroFramework.Controls.MetroButton();
             this.BtnCancel = new MetroFramework.Controls.MetroButton();
@@ -40,51 +40,51 @@ namespace BookRentalShopApp
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(104, 83);
+            this.metroLabel1.Location = new System.Drawing.Point(42, 75);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(21, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(83, 19);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "ID";
+            this.metroLabel1.Text = "유저 아이디";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(62, 117);
+            this.metroLabel2.Location = new System.Drawing.Point(60, 109);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
             this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Password";
+            this.metroLabel2.Text = "패스워드";
             // 
-            // TxtId
-            // 
-            // 
+            // TxtUserId
             // 
             // 
-            this.TxtId.CustomButton.Image = null;
-            this.TxtId.CustomButton.Location = new System.Drawing.Point(152, 1);
-            this.TxtId.CustomButton.Name = "";
-            this.TxtId.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.TxtId.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.TxtId.CustomButton.TabIndex = 1;
-            this.TxtId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.TxtId.CustomButton.UseSelectable = true;
-            this.TxtId.CustomButton.Visible = false;
-            this.TxtId.Lines = new string[0];
-            this.TxtId.Location = new System.Drawing.Point(140, 83);
-            this.TxtId.MaxLength = 32767;
-            this.TxtId.Name = "TxtId";
-            this.TxtId.PasswordChar = '\0';
-            this.TxtId.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.TxtId.SelectedText = "";
-            this.TxtId.SelectionLength = 0;
-            this.TxtId.SelectionStart = 0;
-            this.TxtId.ShortcutsEnabled = true;
-            this.TxtId.Size = new System.Drawing.Size(174, 23);
-            this.TxtId.TabIndex = 2;
-            this.TxtId.UseSelectable = true;
-            this.TxtId.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.TxtId.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.TxtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtId_KeyPress);
+            // 
+            // 
+            this.TxtUserId.CustomButton.Image = null;
+            this.TxtUserId.CustomButton.Location = new System.Drawing.Point(142, 1);
+            this.TxtUserId.CustomButton.Name = "";
+            this.TxtUserId.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.TxtUserId.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.TxtUserId.CustomButton.TabIndex = 1;
+            this.TxtUserId.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.TxtUserId.CustomButton.UseSelectable = true;
+            this.TxtUserId.CustomButton.Visible = false;
+            this.TxtUserId.Lines = new string[0];
+            this.TxtUserId.Location = new System.Drawing.Point(139, 75);
+            this.TxtUserId.MaxLength = 20;
+            this.TxtUserId.Name = "TxtUserId";
+            this.TxtUserId.PasswordChar = '\0';
+            this.TxtUserId.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.TxtUserId.SelectedText = "";
+            this.TxtUserId.SelectionLength = 0;
+            this.TxtUserId.SelectionStart = 0;
+            this.TxtUserId.ShortcutsEnabled = true;
+            this.TxtUserId.Size = new System.Drawing.Size(164, 23);
+            this.TxtUserId.TabIndex = 2;
+            this.TxtUserId.UseSelectable = true;
+            this.TxtUserId.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.TxtUserId.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.TxtUserId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUserId_KeyPress);
             // 
             // TxtPassword
             // 
@@ -92,7 +92,7 @@ namespace BookRentalShopApp
             // 
             // 
             this.TxtPassword.CustomButton.Image = null;
-            this.TxtPassword.CustomButton.Location = new System.Drawing.Point(152, 1);
+            this.TxtPassword.CustomButton.Location = new System.Drawing.Point(142, 1);
             this.TxtPassword.CustomButton.Name = "";
             this.TxtPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.TxtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -101,8 +101,8 @@ namespace BookRentalShopApp
             this.TxtPassword.CustomButton.UseSelectable = true;
             this.TxtPassword.CustomButton.Visible = false;
             this.TxtPassword.Lines = new string[0];
-            this.TxtPassword.Location = new System.Drawing.Point(140, 114);
-            this.TxtPassword.MaxLength = 32767;
+            this.TxtPassword.Location = new System.Drawing.Point(139, 108);
+            this.TxtPassword.MaxLength = 20;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '●';
             this.TxtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -110,7 +110,7 @@ namespace BookRentalShopApp
             this.TxtPassword.SelectionLength = 0;
             this.TxtPassword.SelectionStart = 0;
             this.TxtPassword.ShortcutsEnabled = true;
-            this.TxtPassword.Size = new System.Drawing.Size(174, 23);
+            this.TxtPassword.Size = new System.Drawing.Size(164, 23);
             this.TxtPassword.TabIndex = 3;
             this.TxtPassword.UseSelectable = true;
             this.TxtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -119,9 +119,9 @@ namespace BookRentalShopApp
             // 
             // BtnLogin
             // 
-            this.BtnLogin.Location = new System.Drawing.Point(112, 162);
+            this.BtnLogin.Location = new System.Drawing.Point(87, 146);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(75, 29);
+            this.BtnLogin.Size = new System.Drawing.Size(95, 36);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "로그인";
             this.BtnLogin.UseSelectable = true;
@@ -129,9 +129,9 @@ namespace BookRentalShopApp
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(213, 162);
+            this.BtnCancel.Location = new System.Drawing.Point(188, 146);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(75, 29);
+            this.BtnCancel.Size = new System.Drawing.Size(95, 36);
             this.BtnCancel.TabIndex = 5;
             this.BtnCancel.Text = "취소";
             this.BtnCancel.UseSelectable = true;
@@ -139,25 +139,25 @@ namespace BookRentalShopApp
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(400, 217);
+            this.ClientSize = new System.Drawing.Size(371, 204);
             this.ControlBox = false;
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.TxtPassword);
-            this.Controls.Add(this.TxtId);
+            this.Controls.Add(this.TxtUserId);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
-            this.Font = new System.Drawing.Font("나눔고딕코딩", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLogin";
-            this.Padding = new System.Windows.Forms.Padding(20, 65, 20, 22);
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "로그인";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +167,7 @@ namespace BookRentalShopApp
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox TxtId;
+        private MetroFramework.Controls.MetroTextBox TxtUserId;
         private MetroFramework.Controls.MetroTextBox TxtPassword;
         private MetroFramework.Controls.MetroButton BtnLogin;
         private MetroFramework.Controls.MetroButton BtnCancel;
