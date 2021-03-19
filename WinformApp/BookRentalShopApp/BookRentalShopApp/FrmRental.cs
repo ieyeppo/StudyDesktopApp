@@ -199,6 +199,8 @@ namespace BookRentalShopApp
             column.Visible = false;
             column = DgvData.Columns[3]; // bookIdx
             column.Visible = false;
+            column = DgvData.Columns[4];
+            column.Width = 200;
             column = DgvData.Columns[7]; // rentalState
             column.Visible = false;
 
@@ -237,9 +239,12 @@ namespace BookRentalShopApp
                     else // UPDATE
                     {
                         query = @"UPDATE [dbo].[rentaltbl]
-                                       SET [returnDate] = GETDATE()
-                                          ,[rentalState] = 'T'
-                                     WHERE Idx = @Idx ";
+                                       SET [returnDate] = CASE @rentalState
+						                                    WHEN 'T' THEN GETDATE()
+						                                    WHEN 'R' THEN NULL
+					                                       END
+                                          ,[rentalState] = @rentalState
+                                     WHERE Idx = @Idx";
                     }
                     cmd.CommandText = query;
 
@@ -266,6 +271,10 @@ namespace BookRentalShopApp
                         var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
                         pIdx.Value = TxtIdx.Text;
                         cmd.Parameters.Add(pIdx);
+
+                        var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char, 1);
+                        pRentalState.Value = CboRentalState.SelectedValue;
+                        cmd.Parameters.Add(pRentalState);
                     }
 
                     var result = cmd.ExecuteNonQuery();

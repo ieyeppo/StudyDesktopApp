@@ -30,6 +30,7 @@ namespace BookRentalShopApp
         private void InitializeComponent()
         {
             this.GrbDetail = new System.Windows.Forms.GroupBox();
+            this.DtpReleaseDate = new MetroFramework.Controls.MetroDateTime();
             this.CboDivision = new MetroFramework.Controls.MetroComboBox();
             this.BtnSave = new MetroFramework.Controls.MetroButton();
             this.BtnNew = new MetroFramework.Controls.MetroButton();
@@ -49,7 +50,6 @@ namespace BookRentalShopApp
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.DgvData = new System.Windows.Forms.DataGridView();
-            this.DtpReleaseDate = new MetroFramework.Controls.MetroDateTime();
             this.GrbDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
             this.SuspendLayout();
@@ -85,14 +85,22 @@ namespace BookRentalShopApp
             this.GrbDetail.TabStop = false;
             this.GrbDetail.Text = "상세";
             // 
+            // DtpReleaseDate
+            // 
+            this.DtpReleaseDate.Location = new System.Drawing.Point(98, 158);
+            this.DtpReleaseDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.DtpReleaseDate.Name = "DtpReleaseDate";
+            this.DtpReleaseDate.Size = new System.Drawing.Size(212, 29);
+            this.DtpReleaseDate.TabIndex = 6;
+            // 
             // CboDivision
             // 
             this.CboDivision.FormattingEnabled = true;
             this.CboDivision.ItemHeight = 23;
-            this.CboDivision.Location = new System.Drawing.Point(98, 88);
+            this.CboDivision.Location = new System.Drawing.Point(98, 90);
             this.CboDivision.Name = "CboDivision";
             this.CboDivision.PromptText = "장르";
-            this.CboDivision.Size = new System.Drawing.Size(100, 29);
+            this.CboDivision.Size = new System.Drawing.Size(212, 29);
             this.CboDivision.TabIndex = 4;
             this.CboDivision.UseSelectable = true;
             // 
@@ -146,7 +154,7 @@ namespace BookRentalShopApp
             this.TxtDescriptions.CustomButton.UseSelectable = true;
             this.TxtDescriptions.CustomButton.Visible = false;
             this.TxtDescriptions.Lines = new string[0];
-            this.TxtDescriptions.Location = new System.Drawing.Point(98, 259);
+            this.TxtDescriptions.Location = new System.Drawing.Point(98, 257);
             this.TxtDescriptions.MaxLength = 32767;
             this.TxtDescriptions.Multiline = true;
             this.TxtDescriptions.Name = "TxtDescriptions";
@@ -211,7 +219,7 @@ namespace BookRentalShopApp
             this.TxtISBN.CustomButton.UseSelectable = true;
             this.TxtISBN.CustomButton.Visible = false;
             this.TxtISBN.Lines = new string[0];
-            this.TxtISBN.Location = new System.Drawing.Point(98, 193);
+            this.TxtISBN.Location = new System.Drawing.Point(98, 195);
             this.TxtISBN.MaxLength = 32767;
             this.TxtISBN.Name = "TxtISBN";
             this.TxtISBN.PasswordChar = '\0';
@@ -275,7 +283,7 @@ namespace BookRentalShopApp
             this.TxtAuthor.CustomButton.UseSelectable = true;
             this.TxtAuthor.CustomButton.Visible = false;
             this.TxtAuthor.Lines = new string[0];
-            this.TxtAuthor.Location = new System.Drawing.Point(98, 62);
+            this.TxtAuthor.Location = new System.Drawing.Point(98, 59);
             this.TxtAuthor.MaxLength = 32767;
             this.TxtAuthor.Name = "TxtAuthor";
             this.TxtAuthor.PasswordChar = '\0';
@@ -328,7 +336,7 @@ namespace BookRentalShopApp
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(50, 263);
+            this.metroLabel8.Location = new System.Drawing.Point(50, 256);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(44, 19);
             this.metroLabel8.TabIndex = 1;
@@ -337,7 +345,7 @@ namespace BookRentalShopApp
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(36, 131);
+            this.metroLabel4.Location = new System.Drawing.Point(36, 127);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(58, 19);
             this.metroLabel4.TabIndex = 1;
@@ -346,7 +354,7 @@ namespace BookRentalShopApp
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(50, 197);
+            this.metroLabel7.Location = new System.Drawing.Point(50, 196);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(44, 19);
             this.metroLabel7.TabIndex = 1;
@@ -355,7 +363,7 @@ namespace BookRentalShopApp
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(50, 65);
+            this.metroLabel2.Location = new System.Drawing.Point(50, 61);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(44, 19);
             this.metroLabel2.TabIndex = 1;
@@ -364,7 +372,7 @@ namespace BookRentalShopApp
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(50, 230);
+            this.metroLabel6.Location = new System.Drawing.Point(50, 226);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(44, 19);
             this.metroLabel6.TabIndex = 0;
@@ -373,7 +381,7 @@ namespace BookRentalShopApp
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(36, 164);
+            this.metroLabel5.Location = new System.Drawing.Point(36, 162);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(58, 19);
             this.metroLabel5.TabIndex = 0;
@@ -382,7 +390,7 @@ namespace BookRentalShopApp
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(50, 98);
+            this.metroLabel3.Location = new System.Drawing.Point(50, 94);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(44, 19);
             this.metroLabel3.TabIndex = 0;
@@ -391,7 +399,7 @@ namespace BookRentalShopApp
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(50, 32);
+            this.metroLabel1.Location = new System.Drawing.Point(50, 29);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(44, 19);
             this.metroLabel1.TabIndex = 0;
@@ -412,14 +420,6 @@ namespace BookRentalShopApp
             this.DgvData.Size = new System.Drawing.Size(401, 412);
             this.DgvData.TabIndex = 1;
             this.DgvData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvData_CellClick);
-            // 
-            // DtpReleaseDate
-            // 
-            this.DtpReleaseDate.Location = new System.Drawing.Point(98, 154);
-            this.DtpReleaseDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.DtpReleaseDate.Name = "DtpReleaseDate";
-            this.DtpReleaseDate.Size = new System.Drawing.Size(200, 29);
-            this.DtpReleaseDate.TabIndex = 6;
             // 
             // FrmBooks
             // 
