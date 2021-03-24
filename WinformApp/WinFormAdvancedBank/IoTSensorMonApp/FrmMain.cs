@@ -21,9 +21,10 @@ namespace IoTSensorMonApp
         private List<SensorData> sensors = new List<SensorData>();  //차트, 리스트박스 출력
         private string connString = "Data Source=127.0.0.1;" +
                                     "Initial Catalog=IoTData;" +
-                                    "Persist Security Info=True;" +
                                     "User ID=sa;" +
                                     "Password=123456789";
+        private long timeSpan = 0;  //시간흐르는 값
+        private int randMaxVal = 0; //랜덤값 담을 변수
 
         public FrmMain()
         {
@@ -131,7 +132,19 @@ namespace IoTSensorMonApp
         /// <param name="e"></param>
         private void TimerSimul_Tick(object sender, EventArgs e)
         {
-            int value = randPhoto.Next(1, 1023);    //1부터 1023 사이의 값
+            timeSpan += 1;
+            var temp = timeSpan % 30;
+
+            if(temp.ToString().Length == 2)
+            {
+                randMaxVal = 980;
+            }
+            else
+            {
+                randMaxVal = 120;
+            }
+
+            int value = randPhoto.Next(randMaxVal - 40, randMaxVal);    //1부터 1023 사이의 값
             ShowSensorValue(value.ToString());
         }
 
