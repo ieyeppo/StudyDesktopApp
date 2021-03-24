@@ -16,7 +16,8 @@
     </Grid>-->
     <Window.Resources>
         <local:PersonList x:Key="PersonListData"/>
-
+        <local:NameConverter x:Key="MyNameConverter"/>
+        
         <DataTemplate x:Key="PersonListBoxTemplate">
             <StackPanel>
                 <TextBlock Text="{Binding FirstName}"/>
@@ -35,18 +36,30 @@
         <ListBox x:Name="LsbPerson" Width="200"
                  ItemsSource="{Binding Source={StaticResource PersonListData}}"
                  ItemTemplate="{StaticResource PersonListBoxTemplate}"
-                 IsSynchronizedWithCurrentItem="True"
-                 SelectionChanged="LsbPerson_SelectionChanged">
+                 IsSynchronizedWithCurrentItem="True">
         </ListBox>
 
         <TextBlock Text="Normal Format" Margin="0,20,0,0" FontSize="15" Background="White"/>
-        <TextBlock Name="TxtNomal" DataContext="{StaticResource PersonListData}" Background="Pink"/>
+        <TextBlock Name="TxtNomal" DataContext="{StaticResource PersonListData}" Background="Pink">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource MyNameConverter}"
+				  ConverterParameter="FormatNormal">
+                    <Binding Path="FirstName"/>
+                    <Binding Path="LastName"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
 
         <TextBlock Text="Last Name First" Margin="0,20,0,0" FontSize="15" Background="White"/>
         <TextBlock Name="TxtLastFirst" DataContext="{StaticResource PersonListData}" Background="Pink">
-
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource MyNameConverter}"
+				  ConverterParameter="FormatLastFirst">
+                    <Binding Path="FirstName"/>
+                    <Binding Path="LastName"/>
+                </MultiBinding>
+            </TextBlock.Text>
         </TextBlock>
-
 
     </StackPanel>
 </Window>

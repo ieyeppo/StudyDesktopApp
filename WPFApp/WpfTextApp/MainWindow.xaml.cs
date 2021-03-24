@@ -41,7 +41,6 @@ namespace WpfTextApp
             }
             catch(Exception ex)
             {
-
             }
         }
     }
